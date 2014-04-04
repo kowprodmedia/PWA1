@@ -45,48 +45,142 @@
     console.log('------ Goal2: Assignment: JavaScript Practice ----------');
 
     console.log("1. avg of an array of numbers");
-    var avgNumbers = function(1, 2, 3, 4, 5){
+    
+		    var avgNumbers = function(arr){
+			
+			console.log(arr.length); 
+			//CODE GOES HERE 
+			//Holds data
+			var a = 0; 
+			
+			//Loop works
+			for (var i = 0; i < arr.length; i++) { 
+			
+			// add each array element to the place holder
+			a += arr[i]; 
+			
+			// logging the value 
+			console.log("Value of a " + a); } 
+			
+			a = (a/arr.length); 
+			
+			return a;
+		    };
+		
+		    console.log('avg number = ', avgNumbers([1,2,3,4,5]));
 
-        //CODE GOES HERE
-    };
-
-    console.log('avg number = ', avgNumbers([1,2,3,4,5]));
-
-    //--------------------------------------------------------
+   //--------------------------------------------------------
     console.log("2. concat first and last name");
 
         //PUT FUNCTION HERE
-
-    console.log(fullName('James', 'Bond'));
+        
+		    var fullName = function(fName,lName)
+		    {
+		    
+		    	return fName + " " + lName;
+		    };
+		
+		    console.log(fullName('James', 'Bond'));
 
     //--------------------------------------------------------
-    console.log("3. word count");
+   console.log("3. word count");
     var ipsum = "this is test text that is being used as input to a function"
 
         //PUT FUNCTION HERE
-
-    console.log(wordCount(ipsum));
+        
+	        var wordCount = function(inString)
+	        {
+	        	var ipsumArr = inString.split(" ");
+	        	return ipsumArr.length;
+	        };
+	
+	    	console.log("IPSUM String Word Count: " + wordCount(ipsum));
 
     //--------------------------------------------------------
     console.log("4. sentence char count");
 
         //PUT FUNCTION HERE
-
-    console.log(charCount(ipsum));
+        
+	        var charCount = function(inString)
+	        {
+	        	var ipsumArr = inString.split("");
+	        	return ipsumArr.length;
+	        };
+	
+	    	console.log("Number of Chars in Ipsum: " + charCount(ipsum));
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
 
         //PUT FUNCTION HERE
+        	var vowelsInWord = function(inString)
+        	{
+        		var a = 0;
+        		for(var i = 0; i < inString.length; i++)
+        		{
+        			if('aeiou'.search(inString[i]) > -1)
+        			{
+        				a++;
+        			}
+        		}
+        		
+        		return a;
+        	};
 
-    console.log(vowelsInWord('JavaScript'));
+    console.log("Number of vowels in a word " + vowelsInWord('JavaScript'));
 
     //--------------------------------------------------------
     console.log("6. find number and create an array of even or odd numbers");
 
         //PUT FUNCTION HERE
-
-    console.log(findNum([31,22,4,67,83,6,5,4]));
-    console.log(findNum([31,22,4,67,83,6,5,4], false));
+        
+        	var findNum = function(numArr, bool)
+        	{
+        	
+        		var evenArr = [];
+        		var oddArr = [];
+        		
+        		// If we do not get Null or False
+        		if(bool != undefined && bool != true)
+        		{
+        		
+        			bool = false;
+        		
+        		}
+        		// If we do not get True or Undefined
+        		else 
+        		{
+        		
+        			bool = true;
+        		
+        		}
+        		
+        		for(var e = 0; e < numArr.length; e++)
+        		{
+        			if((numArr[e] % 2) === 0)
+        			{
+        				evenArr.push(numArr[e]);
+        			}
+        			
+        			}
+        			return oddArr;
+        		} 
+        		//else
+        		{
+        			for(var = 0; e < numArr.length; e++)
+        			{
+        				if((numArr[e] % 2) ===0)
+        				{
+        					console.log(e);
+        					evenArr.push(numArr[e]);
+        				}
+        			}
+        			return evenArr;
+        		}
+	// If I call the method below, it will take the variable "bool" equal to undefined
+    console.log("Should be True or Undefined " + findNum([31,22,4,67,83,6,5,4]));
+    
+    // This one makes "bool" false
+    console.log("Should be Null or False " + findNum([31,22,4,67,83,6,5,4], false));
 
 })();
