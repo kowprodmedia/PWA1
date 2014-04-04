@@ -32,7 +32,9 @@
          - console.log the answer outside of the function
 
      6.  create a function named 'findNum'
-         - accepts 2 parameters into the function - 1. array of numbers, 2. boolean
+         - accepts 2 parameters into the function.  
+				1) array of numbers 
+				2) boolean
          - if the second parameter being passed is "false" or null then
              - create an array with all of the odd numbers from
                 the array
@@ -45,142 +47,161 @@
     console.log('------ Goal2: Assignment: JavaScript Practice ----------');
 
     console.log("1. avg of an array of numbers");
-    
-		    var avgNumbers = function(arr){
-			
-			console.log(arr.length); 
-			//CODE GOES HERE 
-			//Holds data
-			var a = 0; 
-			
-			//Loop works
-			for (var i = 0; i < arr.length; i++) { 
-			
-			// add each array element to the place holder
-			a += arr[i]; 
-			
-			// logging the value 
-			console.log("Value of a " + a); } 
-			
-			a = (a/arr.length); 
-			
-			return a;
-		    };
-		
-		    console.log('avg number = ', avgNumbers([1,2,3,4,5]));
+    var avgNumbers = function(arr){
 
-   //--------------------------------------------------------
+		console.log(arr.length);
+        //CODE GOES HERE
+		
+		// Set a var to hold our data
+		var a = 0;
+		
+		// Loop does work
+		for (var i = 0; i < arr.length; i++)
+		{
+			// Add each array element to the place holder
+			a += arr[i];
+			
+			// Logging the value
+			console.log("Value of a " + a);
+		}
+		
+		// Stupid Math. Acutally, this should be in paren. for readability.
+		a = (a/arr.length);
+		
+		// Return that shiz
+		return a;
+    };
+
+	// Write to debug log...
+    console.log('avg number = ', avgNumbers([1,2,3,4,5]));
+
+    //--------------------------------------------------------
     console.log("2. concat first and last name");
 
         //PUT FUNCTION HERE
-        
-		    var fullName = function(fName,lName)
-		    {
-		    
-		    	return fName + " " + lName;
-		    };
-		
-		    console.log(fullName('James', 'Bond'));
+	var fullName = function(fName,lName)
+	{
+		// Simple concat = One word + a space + another word
+		return fName + " " + lName;
+	};
+
+    console.log(fullName('James', 'Bond'));
 
     //--------------------------------------------------------
-   console.log("3. word count");
+    console.log("3. word count");
     var ipsum = "this is test text that is being used as input to a function"
 
         //PUT FUNCTION HERE
-        
-	        var wordCount = function(inString)
-	        {
-	        	var ipsumArr = inString.split(" ");
-	        	return ipsumArr.length;
-	        };
-	
-	    	console.log("IPSUM String Word Count: " + wordCount(ipsum));
+	var wordCount = function(inString)
+	{
+		// The Split method breaks strings into arrays based on the location of a seperator, in this case a space
+		var ipsumArr = inString.split(" ");
+		return ipsumArr.length;
+	};
+
+	// Answer should be 13
+    console.log("IPSUM String Word Count: " + wordCount(ipsum));
 
     //--------------------------------------------------------
     console.log("4. sentence char count");
 
         //PUT FUNCTION HERE
-        
-	        var charCount = function(inString)
-	        {
-	        	var ipsumArr = inString.split("");
-	        	return ipsumArr.length;
-	        };
+	var charCount = function(inString)
+	{
+		// Same as above, but we're breaking on nothing, so we split characters instead of on a seperator
+		var ipsumArr = inString.split("");
+		return ipsumArr.length;
+	};
 	
-	    	console.log("Number of Chars in Ipsum: " + charCount(ipsum));
+	// Answer should be 59
+    console.log("Number of Chars in Ipsum: " + charCount(ipsum));
 
     //--------------------------------------------------------
     console.log("5. how many vowels in a word");
 
         //PUT FUNCTION HERE
-        	var vowelsInWord = function(inString)
-        	{
-        		var a = 0;
-        		for(var i = 0; i < inString.length; i++)
-        		{
-        			if('aeiou'.search(inString[i]) > -1)
-        			{
-        				a++;
-        			}
-        		}
-        		
-        		return a;
-        	};
-
-    console.log("Number of vowels in a word " + vowelsInWord('JavaScript'));
+	var vowelsInWord = function(inString)
+	{
+		var a = 0;
+		
+		// Loops through each char in the string, because strings in JS are arrays of chars
+		for(var i = 0; i < inString.length; i++)
+		{
+			// Conditionally checks for "a","e","i",etc.  The return of the "search" method if a char does not match is -1
+			if('aeiou'.search(inString[i]) > -1)
+			{
+				// Increment the count var
+				a++;
+			}
+		}
+		
+		return a;
+	};
+	
+	//Answer should be 3
+    console.log("Number of Vowels in Input String: " + vowelsInWord('JavaScript'));
 
     //--------------------------------------------------------
     console.log("6. find number and create an array of even or odd numbers");
 
         //PUT FUNCTION HERE
-        
-        	var findNum = function(numArr, bool)
-        	{
-        	
-        		var evenArr = [];
-        		var oddArr = [];
-        		
-        		// If we do not get Null or False
-        		if(bool != undefined && bool != true)
-        		{
-        		
-        			bool = false;
-        		
-        		}
-        		// If we do not get True or Undefined
-        		else 
-        		{
-        		
-        			bool = true;
-        		
-        		}
-        		
-        		for(var e = 0; e < numArr.length; e++)
-        		{
-        			if((numArr[e] % 2) === 0)
-        			{
-        				evenArr.push(numArr[e]);
-        			}
-        			
-        			}
-        			return oddArr;
-        		} 
-        		//else
-        		{
-        			for(var = 0; e < numArr.length; e++)
-        			{
-        				if((numArr[e] % 2) ===0)
-        				{
-        					console.log(e);
-        					evenArr.push(numArr[e]);
-        				}
-        			}
-        			return evenArr;
-        		}
-	// If I call the method below, it will take the variable "bool" equal to undefined
-    console.log("Should be True or Undefined " + findNum([31,22,4,67,83,6,5,4]));
-    
-    // This one makes "bool" false
-    console.log("Should be Null or False " + findNum([31,22,4,67,83,6,5,4], false));
+	var findNum = function(numArr, bool)
+	{
+		/**
+			And this bastard!
+		*/
+	
+		// THese arrays hold nothing, but JS allows us to dynamically resize arrays with the "push" method below
+		var evenArr = [];
+		var oddArr = [];
+
+		// This checks for the "Null / False" condition of the "bool" var
+		if(bool != undefined && bool != true)
+		{
+			bool = false;
+		}
+		else
+		{
+			bool = true;
+		}
+		
+		// This decides; should we give even or odd array list
+		if(bool)
+		{
+			console.log('odd');
+			
+			//Loops through the array looking for odd numbers
+			for(var o = 0; o < numArr.length; o++)
+			{
+				// The "%" is the MOD operator, if the element in numArr[] is divisible by the number on the right of it, it will = 0 i.e. 4/2 is a MOD of 2
+				// Below, odd numbers will not be divisible by 2 so they are NOT equal (!=) to 0
+				if((numArr[o] % 2) != 0)
+				{
+					oddArr.push(numArr[o]);
+				}
+			}
+			
+			return oddArr;
+		}
+		else
+		{
+			console.log('even');
+			
+			for(var e = 0; e < numArr.length; e++)
+			{
+			// The "%" is the MOD operator, if the element in numArr[] is divisible by the number on the right of it, it will = 0 i.e. 4/2 is a MOD of 2
+				if((numArr[e] % 2) === 0)
+				{
+					evenArr.push(numArr[e]);
+				}
+			}
+			
+			return evenArr;
+		}
+		
+	};
+
+    console.log("Should Be Undefined " + findNum([31,22,4,67,83,6,5,4]));
+    console.log("Should Be False " + findNum([31,22,4,67,83,6,5,4], false));
 
 })();
