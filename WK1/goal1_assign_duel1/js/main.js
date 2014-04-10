@@ -80,14 +80,17 @@ function fight(){
 // Player with healt > 1 wins.
 
 function winnerCheck(){
+	console.log("in winnerCheck FN");
 	var result = "no winner";
-	if (player1Health < 1 && player2Health < 1)
-	{
+	
+	
+	if (player1Health < 1 && player2Health < 1){
 		result = "YOU BOTH DIE!";
+	
 	} else if(player1Health < 1){
 		result = player2Name+ " IS THE VICTOR!!"
-	}else if (player2Health < 1)
-	{
+	
+	}else if (player2Health < 1){
 		result = player1Name+ " IS THE VICTOR!!"
 	};
 	return result;

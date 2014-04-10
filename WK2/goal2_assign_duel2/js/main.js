@@ -83,6 +83,7 @@ function fight(){
 		// Player with healt > 1 wins. //OLD CODING <----------
 
 function winnerCheck(){
+console.log("in winnerCheck FN");
 	var result = "no winner";
 	if (fighterOne[2] < 1 && fighterTwo[2] < 1)
 	{
