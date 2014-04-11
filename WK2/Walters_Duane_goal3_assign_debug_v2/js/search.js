@@ -1,4 +1,4 @@
-
+// Walters, Duane - 04.10.2014  PWA1: Goal 3: Assignment: Debug
 
 // Create privatized scope using a self-executing function
 (function(){
