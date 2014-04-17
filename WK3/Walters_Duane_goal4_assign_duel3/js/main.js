@@ -5,9 +5,11 @@
  Assignment: Goal 4: Assignment: Duel 3
 
  =====================================*/
-
+//Self executing function
 (function(){
 
+
+//Button Events
     function disableButton(){
         document.querySelector(".buttonblue").disabled = true;
     }
@@ -17,7 +19,7 @@
 
     };
 
-
+//Fighter arrays
     var fighters = [
 
         {name: "Good Guy",
@@ -32,6 +34,8 @@
     ];
     var rounds = 1;
 
+
+//DOM innerHTML for header section
     var topF1 = document.getElementById("kabal");
     topF1.innerHTML = fighters[0].name + " : " + fighters[0].health;
 
@@ -39,19 +43,19 @@
     topF2.innerHTML = fighters[1].name + " : " + fighters[1].health;
 
 
-
+//Fight Function
     function fight(){
 
 
         document.getElementById("round").innerHTML = "Round " + rounds + " is over";
 
-
+//Determining Damage
         var minDamageP1 = fighters[0].damage * .5;
         var minDamageP2 = fighters[1].damage * .5;
         var f1 = Math.floor(Math.random() * (fighters[0].damage-minDamageP1)+minDamageP1);
         var f2 = Math.floor(Math.random() * (fighters[1].damage-minDamageP2)+minDamageP2);
 
-
+//Inflicted Damage
         fighters[0].health-=f1;
         fighters[1].health-=f2;
 
@@ -61,6 +65,7 @@
         var topF2 = document.getElementById("kratos");
         topF2.innerHTML = fighters[1].name + " " + fighters[1].health;
 
+//Check for Winner
         var results = winnerCheck();
 
 
@@ -70,15 +75,10 @@
 
         } else {
 
-
-
             document.querySelector("#round").innerHTML = "Game Over!";
             document.querySelector("#kabal").innerHTML = results;
             document.querySelector("#kratos").innerHTML = "";
             document.querySelector(".buttonblue").onclick = disableButton();
-
-
-
         }
 
     }
@@ -100,6 +100,5 @@
         }
 
         return result;
-
     }
 })();
