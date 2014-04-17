@@ -5,6 +5,8 @@
  Assignment: Goal 4: Assignment: Duel 3
 
  =====================================*/
+
+
 //Self executing function
 (function(){
 
@@ -93,7 +95,6 @@
 
         } else if(fighters[0].health<1){
             result = "GAME OVER! " + fighters[1].name + " WINS!"
-
 
         }else if(fighters[1].health<1){
             result = "GAME OVER! " + fighters[0].name + " WINS!"
