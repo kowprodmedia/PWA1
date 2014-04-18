@@ -73,8 +73,25 @@
         domFunc.gpaavg.innerHTML = "Average GPA: " + calcAvg(students[number].gpa);
     }
 
+    //Checks for end of array
+    function showAll (){
+        for (var a = 0; a < students.length; a++) {
 
+            for (var pooled in students[a]){
+                console.log(pooled + " " + students[a][pooled]);//I used "pooled" for a term. Is that kosher?
+            }
+        }
+    }
 
+//For new students
+    function newStudent (n,a,g,d) {
+        var newStudent = {};
+        newStudent.name = n;
+        newStudent.address = a;
+        newStudent.gpa = g;
+        newStudent.date = d;
+        students.push(newStudent);
+    }
 
 
 
