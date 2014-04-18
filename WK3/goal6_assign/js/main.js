@@ -78,7 +78,7 @@
         for (var a = 0; a < students.length; a++) {
 
             for (var pooled in students[a]){
-                console.log(pooled + " " + students[a][pooled]);//I used "pooled" for a term. Is that kosher?
+                console.log(pooled + " " + students[a][pooled]);//I used "pooled" for a term. Is that kosher? I've not done something correctly. WARNINGS!!
             }
         }
     }
@@ -113,8 +113,36 @@
         }
     }
 
+    //Calculates GPA average
+    function calcAvg (n) {
+        var total = 0;
 
-    
+        n.forEach(function(e){
+            total += e;
+        });
+
+        var avg = total / n.length;
+        var result = Math.round(avg*100)/100;
+        return result;
+    }
+
+//Gets current date
+    function getDate (){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+
+        var yyyy = today.getFullYear();
+        if(dd < 10){
+            dd='0'+ dd;
+        }
+        if(mm < 10){
+            mm='0'+ mm;
+        }
+        today = mm + '/' + dd+ '/' +yyyy;
+        return today;
+    }
+
 
 
 
