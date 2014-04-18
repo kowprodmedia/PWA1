@@ -33,3 +33,13 @@
 
         }
     ];
+
+    //Pools students into console.log
+    for(var pooled in students[0]){
+        console.log(pooled+ " " + students[0][pooled]);
+    }
+
+//Pools students into console.log
+    for(var pooled in students[1]){
+        // console.log(pooled+ " " + students[1][pooled]);
+    }
