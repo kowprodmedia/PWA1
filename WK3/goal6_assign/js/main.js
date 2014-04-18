@@ -10,14 +10,6 @@
 //Student Array
     var students = [
         {
-            name: "John Doe",
-            address: "123 Boring Lane, Somewhere Boring, ID",
-            gpa:[3.9,4.0,2.5,3.2],
-            date: getDate()
-
-        },
-
-        {
             name: "Phillip Doe",
             address: "123 Blech Dr., Bored, OK",
             gpa:[1.7,2.8,3.9,4.0],
