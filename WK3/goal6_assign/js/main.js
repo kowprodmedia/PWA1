@@ -93,7 +93,28 @@
         students.push(newStudent);
     }
 
+    //Button click
+    function onClick(){
+        number++;
+        domFunc.name.innerHTML = "Name: " + students[number].name;
+        domFunc.address.innerHTML = "Address: " + students[number].address;
+        domFunc.gpa.innerHTML = "GPA: " + students[number].gpa;
+        domFunc.date.innerHTML = "Date: " + getDate();
+        domFunc.gpaavg.innerHTML = "Average GPA: " + calcAvg(students[number].gpa);
+        fin();
 
+
+    }
+
+    function fin(){
+        if (number == students.length - 1) {
+            document.querySelector(".buttonred").innerHTML = "Done!!!";//Changes button text when done
+            domFunc.btn.removeEventListener("click", onClick, false);//Clears listener
+        }
+    }
+
+
+    
 
 
 
