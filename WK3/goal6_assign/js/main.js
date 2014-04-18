@@ -43,3 +43,43 @@
     for(var pooled in students[1]){
         // console.log(pooled+ " " + students[1][pooled]);
     }
+
+    //DOM definitions
+    var domFunc = {
+        btn:document.querySelector(".buttonred"),
+        name:document.querySelector("#name"),
+        address:document.querySelector("#address"),
+        gpa:document.querySelector("#gpa"),
+        date:document.querySelector("#date"),
+        gpaavg:document.querySelector("#gpaavg")
+    };
+
+    //Start
+    var number = 0;
+
+//Dynamically adding new student
+    newStudent("Stephen Doe","123 Ugh Dr., Hotlanta, GA",[3.8,3.2,3.5,3.3] , getDate());
+
+    showAll(); // Console log all the students
+    st(); // Displays first name in HTML
+    domFunc.btn.addEventListener("click", onClick, false); // Add an event listener for the button
+
+//Applies JS to the HTML
+    function st(){
+        domFunc.name.innerHTML = "Name: " + students[number].name;
+        domFunc.address.innerHTML = "Address: " + students[number].address;
+        domFunc.gpa.innerHTML = "GPA: " + students[number].gpa;
+        domFunc.date.innerHTML = "Date: " + getDate();
+        domFunc.gpaavg.innerHTML = "Average GPA: " + calcAvg(students[number].gpa);
+    }
+
+
+
+
+
+
+
+
+
+
+})();//THE END
