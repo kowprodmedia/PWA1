@@ -58,8 +58,8 @@
         var f2 = Math.floor(Math.random() * (fighters[1].damage-minDamageP2)+minDamageP2);
 
 //Inflicted Damage
-        fighters[0].health-=f1;
-        fighters[1].health-=f2;
+        fighters[0].health -= f1;
+        fighters[1].health -= f2;
 
         var topF1 = document.getElementById("kabal");
         topF1.innerHTML = fighters[0].name + " " + fighters[0].health;
@@ -72,7 +72,7 @@
 
 
         //console.log(results);
-        if(results ==="No winner"){
+        if(results === "No winner"){
             rounds++;
 
         } else {
@@ -90,13 +90,13 @@
 
         var result="No winner";
 
-        if(fighters[0].health<0 && fighters[1].health<0){
+        if(fighters[0].health < 0 && fighters[1].health < 0){
             result = "GAME OVER! YOU BOTH DIED";
 
-        } else if(fighters[0].health<1){
+        } else if(fighters[0].health < 1){
             result = "GAME OVER! " + fighters[1].name + " WINS!"
 
-        }else if(fighters[1].health<1){
+        }else if(fighters[1].health < 1){
             result = "GAME OVER! " + fighters[0].name + " WINS!"
         }
 
